@@ -1,5 +1,3 @@
-import React from "react";
-
 const Navbar = () => {
   const toggleSidebar = () => {
     const sidebar = document.querySelector(".sidebar") as HTMLDivElement; // Cast to HTMLDivElement
