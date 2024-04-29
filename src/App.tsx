@@ -1,9 +1,9 @@
-import Dashboard from "./pages/Dashboard";
+import Layout from "./pages/Layout";
 
 const App = () => {
   return (
     <>
-      <Dashboard />
+      <Layout />
     </>
   );
 };
