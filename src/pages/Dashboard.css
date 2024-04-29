@@ -10,8 +10,8 @@ body {
     left: -250px; /* Initially hidden on mobile */
     width: 250px;
     height: 100%;
-    background-color: white;
-    color: #000;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     padding-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transition: left 0.3s ease; /* Added transition */
@@ -33,6 +33,7 @@ body {
   .sidebar li:hover {
     background-color: #1877F2;
     color: white;
+  
   }
   
   .content {
@@ -165,7 +166,8 @@ margin-bottom:50px;
 }
 
 .filter-button:hover {
-background-color: #005f7f;
+background-color:#1877F2;
+color:white;
 }
 
 .student-info {
