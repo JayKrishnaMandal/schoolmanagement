@@ -12,7 +12,7 @@ const Navbar = () => {
         <span className="menu-icon" onClick={toggleSidebar}>
           ☰
         </span>
-        <span>Welcome, Jay Krishna</span>
+        <span className="welcome"> Welcome, Jay Krishna</span>
         <span className="profile-info">Your Profile Info</span>
       </div>
     </>

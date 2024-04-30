@@ -1,52 +1,43 @@
-const Sidebar = () => {
+import React from "react";
+import SidebarItem from "./SidebarItem";
+import {
+  faTachometerAlt,
+  faUserGraduate,
+  faChalkboardTeacher,
+  faBook,
+  faCalendarAlt,
+  faClipboardList,
+  faFileInvoice,
+  faGraduationCap,
+} from "@fortawesome/free-solid-svg-icons";
+
+const Sidebar: React.FC<{ onItemClick: (index: number) => void }> = ({
+  onItemClick,
+}) => {
+  const sidebarItems = [
+    { icon: faTachometerAlt, text: "Dashboard" },
+    { icon: faUserGraduate, text: "Students" },
+    { icon: faChalkboardTeacher, text: "Teachers" },
+    { icon: faBook, text: "Courses" },
+    { icon: faCalendarAlt, text: "Schedule" },
+    { icon: faClipboardList, text: "Attendance" },
+    { icon: faFileInvoice, text: "Fees" },
+    { icon: faGraduationCap, text: "Grades" },
+  ];
+
   return (
-    <>
-      {" "}
-      <div className="sidebar">
-        <ul>
-          <li>
-            <a href="#">
-              <i className="fas fa-tachometer-alt"></i> Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-user-graduate"></i> Students
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-chalkboard-teacher"></i> Teachers
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-school"></i> Classes
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-book"></i> Subjects
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-calendar-alt"></i> Timetable
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-file-invoice"></i> Exams
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-cog"></i> Settings
-            </a>
-          </li>
-        </ul>
-      </div>
-    </>
+    <div className="sidebar">
+      <ul>
+        {sidebarItems.map((item, index) => (
+          <SidebarItem
+            key={index}
+            icon={item.icon}
+            text={item.text}
+            onItemClick={() => onItemClick(index)}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 
