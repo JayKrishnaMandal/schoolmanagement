@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 // Import other section components...
 
 const Dashboard: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const renderSection = () => {
     switch (activeIndex) {
