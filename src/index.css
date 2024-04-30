@@ -4,3 +4,7 @@
 .menu{
     margin-left: 10px;
 }
+.active{
+    color :aliceblue;
+    background-color: #1877F2;
+}

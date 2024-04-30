@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarItem from "./SidebarItem";
 import {
   faTachometerAlt,
@@ -14,6 +14,12 @@ import {
 const Sidebar: React.FC<{ onItemClick: (index: number) => void }> = ({
   onItemClick,
 }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index);
+    onItemClick(index);
+  };
   const sidebarItems = [
     { icon: faTachometerAlt, text: "Dashboard" },
     { icon: faUserGraduate, text: "Students" },
@@ -33,7 +39,8 @@ const Sidebar: React.FC<{ onItemClick: (index: number) => void }> = ({
             key={index}
             icon={item.icon}
             text={item.text}
-            onItemClick={() => onItemClick(index)}
+            onItemClick={() => handleItemClick(index)}
+            active={activeIndex === index}
           />
         ))}
       </ul>
