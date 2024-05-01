@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AddStudent from "./AddStudent";
+import StudentDetails from "./StudentDetails";
 
 // Define the Student interface
 interface Student {
@@ -98,7 +99,7 @@ const StudentComponent: React.FC = () => {
   const [filteredStudents, setFilteredStudents] = useState<Student[]>(students);
   const [searchInput, setSearchInput] = useState<string>("");
   const [showAddStudent, setShowAddStudent] = useState<boolean>(false);
-
+  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
   // Function to filter students based on gender
   const filterStudents = (gender: string) => {
     if (gender === "all") {
@@ -125,11 +126,18 @@ const StudentComponent: React.FC = () => {
     const updatedStudents = students.filter((student) => student.name !== name);
     setFilteredStudents(updatedStudents);
   };
+  const handleStudentClick = (student: Student) => {
+    setSelectedStudent(student);
+  };
 
   // Function to render student list
   const renderStudents = () => {
     return filteredStudents.map((student, index) => (
-      <div key={index} className="student">
+      <div
+        key={index}
+        className="student"
+        onClick={() => handleStudentClick(student)}
+      >
         <img
           className="profile-pic"
           src={student.image}
@@ -180,8 +188,12 @@ const StudentComponent: React.FC = () => {
         your school.
       </p>{" "}
       {showAddStudent ? (
-        // Render Add Student component when showAddStudent is true
         <AddStudent onCancel={() => setShowAddStudent(false)} />
+      ) : selectedStudent ? ( // Render StudentDetails component if a student is selected
+        <StudentDetails
+          student={selectedStudent}
+          onCancel={() => setSelectedStudent(null)}
+        />
       ) : (
         <>
           <div className="student-info">
