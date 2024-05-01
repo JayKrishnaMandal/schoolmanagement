@@ -1,4 +1,5 @@
 import React from "react";
+import LineChart from "../components/LineChart";
 
 interface Props {
   student: {
@@ -30,6 +31,9 @@ const StudentDetails: React.FC<Props> = ({ student, onCancel }) => {
       <button className="close-button" onClick={onCancel}>
         Close
       </button>
+      <div className="linegraph">
+        <LineChart />
+      </div>
     </div>
   );
 };

@@ -53,3 +53,7 @@ color:aliceblue;
     .ml-50{
         margin-left:50px;
     }
+    .linegraph{
+        height :500px;
+        width :80%;
+    }
