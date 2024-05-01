@@ -138,6 +138,7 @@ const StudentComponent: React.FC = () => {
         className="student"
         onClick={() => handleStudentClick(student)}
       >
+        {" "}
         <img
           className="profile-pic"
           src={student.image}
