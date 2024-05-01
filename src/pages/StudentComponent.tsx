@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddStudent from "./AddStudent";
 
 // Define the Student interface
 interface Student {
@@ -96,6 +97,7 @@ const students: Student[] = [
 const StudentComponent: React.FC = () => {
   const [filteredStudents, setFilteredStudents] = useState<Student[]>(students);
   const [searchInput, setSearchInput] = useState<string>("");
+  const [showAddStudent, setShowAddStudent] = useState<boolean>(false);
 
   // Function to filter students based on gender
   const filterStudents = (gender: string) => {
@@ -167,58 +169,73 @@ const StudentComponent: React.FC = () => {
     );
     setFilteredStudents(filtered);
   };
-
+  const handleAddStudentClick = () => {
+    setShowAddStudent(true); // Set showAddStudent to true to render AddStudent component
+  };
   return (
-    <div className="content">
+    <div>
       <h1>Welcome to the School Management System!</h1>
       <p>
         This is the main content area where you can manage various aspects of
         your school.
-      </p>
-      <div className="student-info">
-        <button className="add-button">+ Add Students</button>
-        <span className="student-count total">
-          Total Students: {students.length}
-        </span>
-        <span className="student-count boys">
-          Boys: {students.filter((student) => student.gender === "Male").length}
-        </span>
-        <span className="student-count girls">
-          Girls:{" "}
-          {students.filter((student) => student.gender === "Female").length}
-        </span>
-      </div>
-      {/* Filter buttons */}
-      <div className="filter-buttons">
-        <button className="filter-button" onClick={() => filterStudents("all")}>
-          Show All Students
-        </button>
-        <button
-          className="filter-button"
-          onClick={() => filterStudents("boys")}
-        >
-          Show Boys
-        </button>
-        <button
-          className="filter-button"
-          onClick={() => filterStudents("girls")}
-        >
-          Show Girls
-        </button>
-      </div>
-      {/* Search bar */}
-      <div className="search-container">
-        <input
-          type="text"
-          id="searchInput"
-          value={searchInput}
-          onChange={handleSearchInput}
-          placeholder="Search for students..."
-        />
-        <div id="searchDropdown" className="search-dropdown-content"></div>
-      </div>
-      {/* Student list */}
-      <div id="student-list">{renderStudents()}</div>
+      </p>{" "}
+      {showAddStudent ? (
+        // Render Add Student component when showAddStudent is true
+        <AddStudent onCancel={() => setShowAddStudent(false)} />
+      ) : (
+        <>
+          <div className="student-info">
+            <button className="add-button" onClick={handleAddStudentClick}>
+              + Add Students
+            </button>
+            <span className="student-count total ml-50">
+              Total Students: {students.length}
+            </span>
+            <span className="student-count boys">
+              Boys:{" "}
+              {students.filter((student) => student.gender === "Male").length}
+            </span>
+            <span className="student-count girls">
+              Girls:{" "}
+              {students.filter((student) => student.gender === "Female").length}
+            </span>
+          </div>
+          {/* Filter buttons */}
+          <div className="filter-buttons">
+            <button
+              className="filter-button"
+              onClick={() => filterStudents("all")}
+            >
+              Show All Students
+            </button>
+            <button
+              className="filter-button"
+              onClick={() => filterStudents("boys")}
+            >
+              Show Boys
+            </button>
+            <button
+              className="filter-button"
+              onClick={() => filterStudents("girls")}
+            >
+              Show Girls
+            </button>
+          </div>
+          {/* Search bar */}
+          <div className="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              value={searchInput}
+              onChange={handleSearchInput}
+              placeholder="Search for students..."
+            />
+            <div id="searchDropdown" className="search-dropdown-content"></div>
+          </div>
+          {/* Student list */}
+          <div id="student-list">{renderStudents()}</div>
+        </>
+      )}
     </div>
   );
 };

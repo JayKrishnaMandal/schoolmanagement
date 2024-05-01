@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .sidebar {
@@ -37,7 +38,7 @@ body {
 }
 
 .content {
-  margin-left: 0; /* Adjusted to accommodate sidebar */
+  margin-left:250px !important; /* Adjusted to accommodate sidebar */
   padding-top: 10px;
   padding: 20px;
   margin-top: 50px;
@@ -96,7 +97,7 @@ body {
     left: -250px; /* Initially hidden on mobile */
   }
   .content {
-    margin-left: 0; /* Adjusted for sidebar */
+    margin-left: 0 ; /* Adjusted for sidebar */
     padding-top: 20px; /* Adjusted for navbar */
   }
   .navbar {

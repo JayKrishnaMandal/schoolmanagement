@@ -1,0 +1,114 @@
+ 
+/* Admission form styles */
+.admission-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admission-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+    padding:10px;
+  }
+  
+  .form-group:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  label {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input[type="tel"] {
+    width: calc(100% - 20px);
+    /* Adjusted width to accommodate the gap */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #334FFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1e3e94;
+  }
+  
+  
+  
+  /* Media query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  }
+  
+  
+  
+  
+  .profile-upload {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  .profile-upload input[type="file"] {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+  
+  .profile-upload span {
+    display: block;
+    padding: 10px 20px;
+    background-color: #334FFF;
+    color: #fff;
+    border: none;
+    
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #profile-preview {
+    display: block;
+    margin-top: 20px;
+    max-width: 200px;
+   
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 4px #334FFF;
+  }
