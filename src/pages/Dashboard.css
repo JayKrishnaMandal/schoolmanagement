@@ -1,133 +1,133 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  position: fixed !important;
+  top: 0;
+  left: -250px; /* Initially hidden on mobile */
+  width: 250px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
+  padding-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease; /* Added transition */
+  overflow-y: auto; /* Added scrollbar */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar li {
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Added transition */
+}
+
+.sidebar li:hover {
+  background-color: #1877F2;
+  color: white;
+
+}
+
+.content {
+  margin-left: 0; /* Adjusted to accommodate sidebar */
+  padding-top: 10px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:#1877F2;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.profile-info {
+  float: right;
+  margin-right: 70px;
+}
+
+.menu-icon {
+  display: none; /* Initially hidden on larger screens */
+  cursor: pointer;
+}
+
+/* Custom scrollbar styles */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+
+.sidebar li a{
+    color:black;
+    text-decoration:none;
+   
+}
+
+ .sidebar li a:hover{
+    color:white;
+    text-decoration:none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Responsive styles */
+  .sidebar {
+    left: -250px; /* Initially hidden on mobile */
+  }
+  .content {
+    margin-left: 0; /* Adjusted for sidebar */
+    padding-top: 20px; /* Adjusted for navbar */
+  }
+  .navbar {
+    padding-left: 50px; /* Added padding for menu icon */
+  }
+  .menu-icon {
+    display: block; /* Displayed on smaller screens */
+    position: absolute;
+    top: 20px;
+    left: 20px;
   }
   
+   .sidebar ul {
+    margin-top: 70px; /* Adjusted for desktop */
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* Default styles for desktop */
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Initially hidden on mobile */
-    width: 250px;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    color:rgb(0, 0, 0);
-    padding-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease; /* Added transition */
-    overflow-y: auto; /* Added scrollbar */
+    left: 0; /* Always visible on desktop */
+  }
+  .content {
+    margin-left: 250px; /* Adjusted to accommodate sidebar */
   }
   
   .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 30px;
+    margin-top: 50px; /* Adjusted for desktop */
   }
-  
-  .sidebar li {
-    padding: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Added transition */
-  }
-  
-  .sidebar li:hover {
-    background-color: #1877F2;
-    color: white;
-  
-  }
-  
-  .content {
-    margin-left: 0; /* Adjusted to accommodate sidebar */
-    padding-top: 10px;
-    padding: 20px;
-    margin-top: 50px;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color:#1877F2;
-    color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .profile-info {
-    float: right;
-    margin-right: 70px;
-  }
-  
-  .menu-icon {
-    display: none; /* Initially hidden on larger screens */
-    cursor: pointer;
-  }
-  
-  /* Custom scrollbar styles */
-  .sidebar::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .sidebar::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-  }
-  
-  .sidebar::-webkit-scrollbar-thumb {
-    background-color: #888;
-  }
-  
-  
-  .sidebar li a{
-      color:black;
-      text-decoration:none;
-     
-  }
-  
-   .sidebar li a:hover{
-      color:white;
-      text-decoration:none;
-  }
-  
-  @media screen and (max-width: 768px) {
-    /* Responsive styles */
-    .sidebar {
-      left: -250px; /* Initially hidden on mobile */
-    }
-    .content {
-      margin-left: 0; /* Adjusted for sidebar */
-      padding-top: 20px; /* Adjusted for navbar */
-    }
-    .navbar {
-      padding-left: 50px; /* Added padding for menu icon */
-    }
-    .menu-icon {
-      display: block; /* Displayed on smaller screens */
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-    
-     .sidebar ul {
-      margin-top: 70px; /* Adjusted for desktop */
-    }
-  }
-  
-  @media screen and (min-width: 769px) {
-    /* Default styles for desktop */
-    .sidebar {
-      left: 0; /* Always visible on desktop */
-    }
-    .content {
-      margin-left: 250px; /* Adjusted to accommodate sidebar */
-    }
-    
-    .sidebar ul {
-      margin-top: 50px; /* Adjusted for desktop */
-    }
-  }
-  
+}
+
 
 
 

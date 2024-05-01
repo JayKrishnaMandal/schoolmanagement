@@ -1,10 +1,10 @@
 import React from "react";
+import StudentComponent from "./StudentComponent";
 
 const StudentsSection: React.FC = () => {
   return (
     <div>
-      <h2>Students Section</h2>
-      {/* Add your students content here */}
+      <StudentComponent />
     </div>
   );
 };

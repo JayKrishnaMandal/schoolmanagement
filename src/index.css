@@ -8,3 +8,45 @@
     color :aliceblue;
     background-color: #1877F2;
 }
+.boxes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    margin-top: 40%;
+   
+    
+}
+.box{
+    margin:5px;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.box-color1{
+background:#1877F2;
+color:aliceblue;
+
+}
+.box-color2{
+    background:#59b54ddc;
+    color:aliceblue;
+   
+    }
+    .box-color3{
+        background:#786d32dc;
+        color:aliceblue;
+       
+        }
+
+    .chartdiv{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .outer-box{
+        display: flex;
+        flex-direction: column;
+        margin-left:100px;
+        
+    }
