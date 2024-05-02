@@ -2,7 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMale, faFemale } from "@fortawesome/free-solid-svg-icons";
-import PieChart from "./PieChart";
+import PieChart from "../../PieChart";
 
 const DashboardSection: React.FC = () => {
   const boysCount = 246;
