@@ -24,8 +24,8 @@ const DashboardSection: React.FC = () => {
 
   return (
     <>
+      <h2>Dashboard Section</h2>
       <div className="chartdiv">
-        <h2>Dashboard Section</h2>
         <div style={{ textAlign: "center" }}>
           <PieChart data={data} />
         </div>
