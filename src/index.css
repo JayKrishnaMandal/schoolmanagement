@@ -60,27 +60,48 @@ color:aliceblue;
    .calendar{
     margin-top:100px;
    }
-    /* calendar.css */
-.calendar-container {
+   .calendar-container {
     max-width: 800px;
     margin: 0 auto;
   }
   
-  .fc-day-grid-event {
-    background-color: #007bff;
-    color: white;
+  /* Title of the calendar */
+  .calendar-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Event titles */
+  .fc-title {
+    font-weight: bold;
+  }
+  
+  /* Event background color */
+  .fc-event {
+    background-color: #ff7f50; /* Coral */
+    color: #fff;
     border: none;
+    cursor: pointer;
   }
   
-  .fc-day-grid-event:hover {
-    background-color: #0056b3;
+  /* Event hover effect */
+  .fc-event:hover {
+    background-color: #ff6347; /* Tomato */
   }
   
-  .fc-daygrid-event-dot {
-    background-color: #28a745;
+  /* Today's date */
+  .fc-day-today {
+    background-color: #f0f0f0;
+    font-weight: bold;
   }
   
-  .fc-daygrid-event-dot:hover {
-    background-color: #218838;
+  /* Event dot color */
+  .fc-event-dot {
+    background-color: #4682b4; /* Steel Blue */
   }
   
+  /* Event dot hover effect */
+  .fc-event-dot:hover {
+    background-color: #4169e1; /* Royal Blue */
+  }
