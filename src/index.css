@@ -57,7 +57,9 @@ color:aliceblue;
         height :500px;
         width :80%;
     }
-   
+   .calendar{
+    margin-top:100px;
+   }
     /* calendar.css */
 .calendar-container {
     max-width: 800px;
