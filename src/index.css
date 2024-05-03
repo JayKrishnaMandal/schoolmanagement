@@ -24,12 +24,12 @@
 }
 
 .box-color1{
-background:#7f3333;
+background:#37886a;
 color:aliceblue;
 
 }
 .box-color2{
-    background:#59b54ddc;
+    background:#562952dc;
     color:aliceblue;
    
     }
@@ -40,7 +40,7 @@ color:aliceblue;
         }
 
     .chartdiv{
-        margin-top: 10px;
+       
         display: flex;
         flex-direction: row;
        justify-content: center;
@@ -60,7 +60,7 @@ color:aliceblue;
         width :80%;
     }
    .calendar{
-    margin-top:100px;
+    margin-top:10px;
    }
    .calendar-container {
     max-width: 800px;

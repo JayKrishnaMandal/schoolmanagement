@@ -10,6 +10,7 @@ const DashboardSection: React.FC = () => {
   const boysCount = 246;
   const girlsCount = 145;
   const staffcounts = 19;
+  const presentstaff = 17;
 
   const data = {
     labels: ["Boys", "Girls"],
@@ -30,17 +31,29 @@ const DashboardSection: React.FC = () => {
           <PieChart data={data} />
         </div>
         <div className="outer-box">
-          <div className="box box-color3">
+          <div className="box box-color1">
             <FontAwesomeIcon icon={faMale} />
             <FontAwesomeIcon icon={faFemale} />
             <div>Total Students</div>
             <p>{girlsCount + boysCount}</p>
+          </div>
+          <div className="box box-color3">
+            <FontAwesomeIcon icon={faMale} />
+            <FontAwesomeIcon icon={faFemale} />
+            <div>Present Students</div>
+            <p>{girlsCount + boysCount - 20}</p>
           </div>
           <div className="box box-color1">
             <FontAwesomeIcon icon={faMale} />
 
             <div>Total Staffs</div>
             <p>{staffcounts}</p>
+          </div>
+          <div className="box box-color3">
+            <FontAwesomeIcon icon={faMale} />
+
+            <div>Present Staff</div>
+            <p>{presentstaff}</p>
           </div>
         </div>
       </div>
