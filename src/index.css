@@ -24,7 +24,7 @@
 }
 
 .box-color1{
-background:#1877F2;
+background:#7f3333;
 color:aliceblue;
 
 }
@@ -57,3 +57,28 @@ color:aliceblue;
         height :500px;
         width :80%;
     }
+   
+    /* calendar.css */
+.calendar-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .fc-day-grid-event {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .fc-day-grid-event:hover {
+    background-color: #0056b3;
+  }
+  
+  .fc-daygrid-event-dot {
+    background-color: #28a745;
+  }
+  
+  .fc-daygrid-event-dot:hover {
+    background-color: #218838;
+  }
+  
